@@ -1,0 +1,11 @@
+[Unit]
+Description=Use xboxdrv to allow paddle shifters to masquerade as an xbox controller
+
+[Service]
+Type=simple
+ExecStart=xboxdrv --silent --evdev /dev/input/by-id/usb-Leo_Bodnar_µBBI_Interface_B92816-event-joystick \
+ --evdev-absmap ABS_Z=x1 --evdev-keymap BTN_THUMB=dr,BTN_TRIGGER=dl,BTN_TOP=a,BTN_THUMB2=b,BTN_TOP2=x,BTN_PINKIE=y,BTN_DEAD=rb \
+ --mimic-xpad
+
+[Install]
+WantedBy=default.target

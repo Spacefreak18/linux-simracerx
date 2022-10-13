@@ -1,0 +1,4 @@
+# SimCon (Sim Controller) 0
+SUBSYSTEM=="input", ATTRS{idProduct}=="3373",  ATTRS{idVendor}=="0483", TAG+="systemd", SYMLINK+="simcon0", ENV{SYSTEMD_USER_WANTS}+="paddle_shifters.service"
+# SimCon (Sim Controller)  1
+SUBSYSTEM=="input", ATTRS{idProduct}=="2310",  ATTRS{idVendor}=="1dd2", TAG+="systemd", SYMLINK+="simcon1", ENV{SYSTEMD_USER_WANTS}+="button_box.service"

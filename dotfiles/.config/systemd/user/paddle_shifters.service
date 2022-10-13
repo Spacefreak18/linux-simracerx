@@ -1,0 +1,10 @@
+[Unit]
+Description=Use xboxdrv to allow paddle shifters to masquerade as an xbox controller
+
+[Service]
+Type=simple
+ExecStart=xboxdrv --silent --evdev /dev/input/by-id/usb-STMicroelectronics_3DRap_Vintage_Paddle-event-joystick \
+            --evdev-keymap BTN_TOP=a,BTN_THUMB=b,BTN_TRIGGER=x,BTN_THUMB2=y --mimic-xpad
+
+[Install]
+WantedBy=default.target
